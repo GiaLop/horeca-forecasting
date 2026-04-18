@@ -25,32 +25,37 @@ energy_price → cost_inflation → menu_price_adjustment → demand_response
 ## Repository Structure
 ```
 horeca-forecasting/
-├── CLAUDE.md
+├── ROADMAP.ipynb                          ← piano di lavoro con stato avanzamento
 ├── data/
 │   ├── raw/
-│   │   ├── raw_sales_pos.csv
-│   │   ├── supplier_invoices.csv
-│   │   ├── recipe_book_unstandardized.csv
-│   │   ├── inventory_stock.csv
-│   │   └── benchmark_ingredienti_horeca.csv
-│   ├── external/
+│   │   ├── raw_sales_pos.csv              (64.6K righe, 2023-2024)
+│   │   ├── supplier_invoices.csv          (1.6K righe, 2023-2024)
+│   │   ├── recipe_book_unstandardized.csv (65 righe — 10 ricette originali)
+│   │   ├── inventory_stock.csv            (577 righe, snapshot mensili)
+│   │   └── benchmark_ingredienti_horeca.csv (117 ingredienti con prezzi min/max)
+│   ├── external/                          ← da costruire in Notebook 02
 │   │   ├── dim_calendar.csv
 │   │   ├── dim_weather.csv
 │   │   ├── dim_events.csv
 │   │   └── dim_energy.csv
-│   └── processed/
-├── notebooks/
-│   ├── 01_data_profiling.ipynb
+│   └── processed/                         ← output ETL (Notebook 03)
+├── notebook/                              ← nota: singolare, non "notebooks"
+│   ├── 01_data_profiling_cleaning.ipynb   ✓ IN LAVORAZIONE
 │   ├── 02_dimension_tables.ipynb
 │   ├── 03_etl_sql.ipynb
 │   ├── 04_forecasting_model.ipynb
 │   └── 05_energy_scenario.ipynb
 ├── src/
-│   ├── utils.py
-│   └── utils_forecast.py
-└── output/
-    ├── forecasts/
-    └── scenarios/
+│   ├── utils.py                           ← utility esistenti (non modificare)
+│   ├── utils_update.py                    ← se una utility esistente va corretta
+│   └── utils_forecast.py                  ← nuove funzioni specifiche al forecasting
+├── output/
+│   ├── forecasts/
+│   └── scenarios/
+└── _extra/                                ← locale only, non versionato su Git
+    ├── CLAUDE.md                          ← questo file
+    ├── ROADMAP.ipynb
+    └── ebitda_pipeline.ipynb              ← progetto precedente, fonte parametri calibrati
 ```
 
 ## PHASES
@@ -121,6 +126,14 @@ Apply calibrated elasticities to new energy price inputs.
 2. Explain logic before writing code
 3. Show output and wait for confirmation
 4. Never proceed to next phase without explicit approval
+
+### NaN Handling Rule (nome_standard)
+After every fuzzy match step, rows where nome_standard = NaN must NOT be
+dropped automatically. Workflow:
+1. Print nunique and value_counts('categoria') for NaN rows
+2. Add comment # AWAIT GIOVANNI APPROVAL and stop
+3. Giovanni decides: drop, manual map, or keep
+Apply to: inventory, invoices, sales_pos, recipes — any table with fuzzy match.
 
 ### Tech Stack
 - Python + Jupyter Notebooks in VSCode
