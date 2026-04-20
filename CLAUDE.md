@@ -32,7 +32,7 @@ horeca-forecasting/
 │   │   ├── supplier_invoices.csv          (1.6K righe, 2023-2024)
 │   │   ├── recipe_book_unstandardized.csv (65 righe — 10 ricette originali)
 │   │   ├── inventory_stock.csv            (577 righe, snapshot mensili)
-│   │   └── benchmark_ingredienti_horeca.csv (117 ingredienti con prezzi min/max)
+│   │   └── benchmark_ingredienti_horeca.csv (125 ingredienti con prezzi min/max)
 │   ├── external/                          ← da costruire in Notebook 02
 │   │   ├── dim_calendar.csv
 │   │   ├── dim_weather.csv
@@ -40,7 +40,7 @@ horeca-forecasting/
 │   │   └── dim_energy.csv
 │   └── processed/                         ← output ETL (Notebook 03)
 ├── notebook/                              ← nota: singolare, non "notebooks"
-│   ├── 01_data_profiling_cleaning.ipynb   ✓ IN LAVORAZIONE
+│   ├── 01_data_profiling_cleaning.ipynb   ✓ COMPLETATO
 │   ├── 02_dimension_tables.ipynb
 │   ├── 03_etl_sql.ipynb
 │   ├── 04_forecasting_model.ipynb
@@ -163,3 +163,8 @@ New functions → `src/utils_forecast.py`
 - **Claude Code**: ETL, scaffolding, mechanical code
 - **Giovanni + Claude chat**: model logic, parameter decisions, business interpretation
 - **Giovanni**: domain decisions, elasticity validation, scenario assumptions
+
+## Current Status
+- **Notebook 01 COMPLETATO**: data profiling (all 5 tables), cleaning, outlier fixing (inventory + invoices), recipe augmentation (16 dishes, 125-ingredient benchmark), sales_pos coverage check vs recipe book
+- **NaN Handling Rule** added to Golden Rules: never auto-drop NaN on nome_standard — print breakdown and AWAIT GIOVANNI APPROVAL
+- **Next step**: Notebook 02 — `dim_calendar.csv`
