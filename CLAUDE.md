@@ -168,10 +168,11 @@ New functions → `src/utils_forecast.py`
 - **Notebook 01 COMPLETATO**: data profiling (all 5 tables), cleaning, outlier fixing (inventory + invoices), recipe augmentation (16 dishes, 125-ingredient benchmark), sales_pos coverage check vs recipe book
 - **NaN Handling Rule** added to Golden Rules: never auto-drop NaN on nome_standard — print breakdown and AWAIT GIOVANNI APPROVAL
 
-- **Notebook 02 — Dimension Tables (in corso):**
-  - `dim_calendar` ✓ COMPLETO — 731 righe, festività nazionali + svizzere (TI/GR/ZH/BE), ponti custom (solo festività feriali), stagioni meteorologiche, `is_high_season` giugno–settembre (placeholder, da rivedere dopo join con POS in Notebook 03)
-  - `dim_weather` ✓ COMPLETO — 731 righe, Open-Meteo API, coordinate Como (45.81°N 9.09°E), `is_bad_weather = rain_mm > 10 OR avg_temp < 5`
-  - `dim_events` ✓ COMPLETO — 204 righe, eventi reali 2023-2024, una riga per giorno, copertura: Como / Milano / Cernobbio / Monza; date EST marcate nel codice
-  - `dim_energy` ☐ DA FARE — file PUN da scaricare manualmente da mercatoelettrico.org; tre scenari 2026 a 100/150/200 €/MWh
+- **Notebook 02 — Dimension Tables ✓ COMPLETATO:**
+  - `dim_calendar` ✓ — 731×7, festività nazionali + svizzere (TI/GR/ZH/BE), ponti custom (solo festività feriali), stagioni meteorologiche, `is_high_season` giugno–settembre (placeholder, da rivedere dopo join con POS in Notebook 03)
+  - `dim_weather` ✓ — 731×4, Open-Meteo API, coordinate Como (45.81°N 9.09°E), `is_bad_weather = rain_mm > 10 OR avg_temp < 5`
+  - `dim_events` ✓ — 204×6, eventi reali 2023-2024, una riga per giorno, copertura: Como / Milano / Cernobbio / Monza; Orticolario + Proposte Cernobbio incluse
+  - `dim_energy` ✓ — 731×3, PUN reale GME 2023-2024, base 100 = media 2019 (52.33 €/MWh); scenari 2026: 150/300/400 €/MWh
+  - Refactor: funzioni custom (`compute_ponte`, `get_season`, `days`) spostate in `src/utils_forecast.py` con docstring; notebook usa `import src.utils_forecast as ut_f`
 
-- **Next step**: `dim_energy` — in attesa download file GME da mercatoelettrico.org
+- **Next step**: Notebook 03 — ETL & SQL (DuckDB)
