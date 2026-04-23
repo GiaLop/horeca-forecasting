@@ -25,37 +25,38 @@ energy_price → cost_inflation → menu_price_adjustment → demand_response
 ## Repository Structure
 ```
 horeca-forecasting/
-├── ROADMAP.ipynb                          ← piano di lavoro con stato avanzamento
+├── ROADMAP.ipynb                          ← project plan and progress tracker
 ├── data/
 │   ├── raw/
-│   │   ├── raw_sales_pos.csv              (64.6K righe, 2023-2024)
-│   │   ├── supplier_invoices.csv          (1.6K righe, 2023-2024)
-│   │   ├── recipe_book_unstandardized.csv (65 righe — 10 ricette originali)
-│   │   ├── inventory_stock.csv            (577 righe, snapshot mensili)
-│   │   └── benchmark_ingredienti_horeca.csv (125 ingredienti con prezzi min/max)
-│   ├── external/                          ← da costruire in Notebook 02
+│   │   ├── raw_sales_pos.csv              (64.6K rows, 2023-2024)
+│   │   ├── supplier_invoices.csv          (1.6K rows, 2023-2024)
+│   │   ├── recipe_book_unstandardized.csv (65 rows — 10 original recipes)
+│   │   ├── inventory_stock.csv            (577 rows, monthly snapshots)
+│   │   └── benchmark_ingredienti_horeca.csv (125 ingredients with min/max prices)
+│   ├── external/                          ← built in Notebook 02
 │   │   ├── dim_calendar.csv
 │   │   ├── dim_weather.csv
 │   │   ├── dim_events.csv
 │   │   └── dim_energy.csv
-│   └── processed/                         ← output ETL (Notebook 03)
-├── notebook/                              ← nota: singolare, non "notebooks"
-│   ├── 01_data_profiling_cleaning.ipynb   ✓ COMPLETATO
-│   ├── 02_dimension_tables.ipynb
-│   ├── 03_etl_sql.ipynb
+│   └── processed/                         ← ETL output (Notebook 03)
+│       └── daily_timeseries.csv           (731 days × 18 cols — main model input)
+├── notebook/                              ← singular, not "notebooks"
+│   ├── 01_data_profiling_cleaning.ipynb   ✓ COMPLETE
+│   ├── 02_dimension_tables.ipynb          ✓ COMPLETE
+│   ├── 03_etl_sql.ipynb                   ✓ COMPLETE
 │   ├── 04_forecasting_model.ipynb
 │   └── 05_energy_scenario.ipynb
 ├── src/
-│   ├── utils.py                           ← utility esistenti (non modificare)
-│   ├── utils_update.py                    ← se una utility esistente va corretta
-│   └── utils_forecast.py                  ← nuove funzioni specifiche al forecasting
+│   ├── utils.py                           ← existing utilities (do not modify)
+│   ├── utils_update.py                    ← if an existing utility needs fixing
+│   └── utils_forecast.py                  ← new functions specific to forecasting
 ├── output/
 │   ├── forecasts/
 │   └── scenarios/
-└── _extra/                                ← locale only, non versionato su Git
-    ├── CLAUDE.md                          ← questo file
+└── _extra/                                ← local only, not versioned on Git
+    ├── CLAUDE.md                          ← this file
     ├── ROADMAP.ipynb
-    └── ebitda_pipeline.ipynb              ← progetto precedente, fonte parametri calibrati
+    └── ebitda_pipeline.ipynb              ← previous project, source of calibrated parameters
 ```
 
 ## PHASES
@@ -66,15 +67,15 @@ horeca-forecasting/
 - **dim_weather**: `date`, `avg_temp`, `rain_mm`, `is_bad_weather`
   Source: Open-Meteo free API (Como/Milan area)
 - **dim_events**: `date`, `event_type`, `magnitude`
-  Source: simulated CSV
-- **dim_energy**: `date`, `pun_eur_mwh`, `gas_eur_mwh`, `energy_cost_index`
-  Source: real PUN data from GME (mercatoelettrico.org) for 2022-2024 baseline;
-  simulated 2026 shock scenario calibrated on FIPE reports
+  Source: real events CSV
+- **dim_energy**: `date`, `pun_eur_mwh`, `energy_cost_index`
+  Source: real PUN data from GME (mercatoelettrico.org) for 2023-2024;
+  2026 shock scenarios at 150/300/400 €/MWh calibrated on FIPE reports
 
 ### Phase 2 — ETL & SQL Preparation (DuckDB)
 Merge internal POS data with all dimension tables.
 Target unified time-series:
-`date | covers | revenue | avg_check | max_temp | rain_mm | is_holiday | is_ponte | event_flag | pun_eur_mwh | energy_cost_index`
+`date | covers | revenue | avg_check | avg_temp | rain_mm | is_holiday | is_ponte | event_magnitude | event_radius_km | pun_eur_mwh | energy_cost_index`
 
 ### Phase 3 — Demand Forecasting Model
 - **Baseline**: weighted moving average (last 3 same weekdays + same day previous year)
@@ -135,6 +136,13 @@ dropped automatically. Workflow:
 3. Giovanni decides: drop, manual map, or keep
 Apply to: inventory, invoices, sales_pos, recipes — any table with fuzzy match.
 
+### Clean Data Rule
+In every notebook, always load the cleaned tables produced by Notebook 01.
+Never reload raw files from data/raw/.
+Clean tables: sales_pos_cleaned, invoices_cleaned_std,
+inventory_cleaned_std, recipes_cleaned_aug, benchmark_cleaned.
+For Notebook 03+: load data/processed/daily_timeseries.csv as the main input.
+
 ### Tech Stack
 - Python + Jupyter Notebooks in VSCode
 - DuckDB for SQL queries
@@ -157,6 +165,8 @@ Apply to: inventory, invoices, sales_pos, recipes — any table with fuzzy match
 `quantity_exception_manage`, `get_best_match`, `imputing_benchmark_price`,
 `prices_delta_flag`
 
+`src/utils_forecast.py`: `compute_ponte`, `get_season`, `days`
+
 New functions → `src/utils_forecast.py`
 
 ### Division of Labor
@@ -165,14 +175,33 @@ New functions → `src/utils_forecast.py`
 - **Giovanni**: domain decisions, elasticity validation, scenario assumptions
 
 ## Current Status
-- **Notebook 01 COMPLETATO**: data profiling (all 5 tables), cleaning, outlier fixing (inventory + invoices), recipe augmentation (16 dishes, 125-ingredient benchmark), sales_pos coverage check vs recipe book
-- **NaN Handling Rule** added to Golden Rules: never auto-drop NaN on nome_standard — print breakdown and AWAIT GIOVANNI APPROVAL
 
-- **Notebook 02 — Dimension Tables ✓ COMPLETATO:**
-  - `dim_calendar` ✓ — 731×7, festività nazionali + svizzere (TI/GR/ZH/BE), ponti custom (solo festività feriali), stagioni meteorologiche, `is_high_season` giugno–settembre (placeholder, da rivedere dopo join con POS in Notebook 03)
-  - `dim_weather` ✓ — 731×4, Open-Meteo API, coordinate Como (45.81°N 9.09°E), `is_bad_weather = rain_mm > 10 OR avg_temp < 5`
-  - `dim_events` ✓ — 204×6, eventi reali 2023-2024, una riga per giorno, copertura: Como / Milano / Cernobbio / Monza; Orticolario + Proposte Cernobbio incluse
-  - `dim_energy` ✓ — 731×3, PUN reale GME 2023-2024, base 100 = media 2019 (52.33 €/MWh); scenari 2026: 150/300/400 €/MWh
-  - Refactor: funzioni custom (`compute_ponte`, `get_season`, `days`) spostate in `src/utils_forecast.py` con docstring; notebook usa `import src.utils_forecast as ut_f`
+- **Notebook 01 ✓ COMPLETE**: data profiling (all 5 tables), cleaning, outlier fixing
+  (inventory + invoices), recipe augmentation (16 dishes, 125-ingredient benchmark),
+  sales_pos coverage check vs recipe book
 
-- **Next step**: Notebook 03 — ETL & SQL (DuckDB)
+- **Notebook 02 ✓ COMPLETE — Dimension Tables:**
+  - `dim_calendar` ✓ — 731×7, Italian + Swiss holidays (TI/GR/ZH/BE), custom ponte
+    logic (weekday-only holidays), meteorological seasons, `is_high_season` Jun–Sep
+    (placeholder, to be revised after POS join in Notebook 03)
+  - `dim_weather` ✓ — 731×4, Open-Meteo API, Como coords (45.81°N 9.09°E),
+    `is_bad_weather = rain_mm > 10 OR avg_temp < 5`
+  - `dim_events` ✓ — 204×7, real 2023-2024 events, one row per day per event,
+    coverage: Como / Milano / Cernobbio / Monza; Orticolario + Proposte Cernobbio
+    included; `event_id` unique per event (event_name + year key)
+  - `dim_energy` ✓ — 731×3, real GME PUN data 2023-2024, base 100 = 2019 mean
+    (52.33 €/MWh); 2026 scenarios: 150/300/400 €/MWh
+  - Refactor: custom functions (`compute_ponte`, `get_season`, `days`) moved to
+    `src/utils_forecast.py` with docstrings; notebook imports as `ut_f`
+
+- **Notebook 03 ✓ COMPLETE — ETL & SQL (DuckDB):**
+  - `data/processed/daily_timeseries.csv` — 731 days × 18 columns
+  - Phase A: POS aggregated via `basic_cleaning` + `date_accuracy` (419 out-of-range
+    rows removed); covers deduped by (date, tavolo); revenue food-only (24.8% bevande
+    excluded)
+  - Phase B: DuckDB LEFT JOINs on date — calendar, weather, events, energy all clean
+  - `event_id` unique per event (not per day); `event_magnitude` and `event_radius_km`
+    both set to 0 on days without events
+  - NaN only on `event_name` and `event_type` for days without events (by design)
+
+- **Next step**: Notebook 04 — Forecasting Model
