@@ -1,205 +1,205 @@
-date,city,event_name,event_type,magnitude,radius_km
-2023-01-01,Como,Ponte Capodanno,tourism_peak,2,0
-2023-01-02,Como,Ponte Capodanno,tourism_peak,2,0
-2023-02-21,Milano,Milano Fashion Week Feb 2023,fair,3,50
-2023-02-22,Milano,Milano Fashion Week Feb 2023,fair,3,50
-2023-02-23,Milano,Milano Fashion Week Feb 2023,fair,3,50
-2023-02-24,Milano,Milano Fashion Week Feb 2023,fair,3,50
-2023-02-25,Milano,Milano Fashion Week Feb 2023,fair,3,50
-2023-02-26,Milano,Milano Fashion Week Feb 2023,fair,3,50
-2023-02-27,Milano,Milano Fashion Week Feb 2023,fair,3,50
-2023-04-08,Como,Pasqua e Pasquetta,tourism_peak,2,0
-2023-04-09,Como,Pasqua e Pasquetta,tourism_peak,2,0
-2023-04-10,Como,Pasqua e Pasquetta,tourism_peak,2,0
-2023-04-18,Milano,Salone del Mobile 2023,fair,3,50
-2023-04-19,Milano,Salone del Mobile 2023,fair,3,50
-2023-04-20,Milano,Salone del Mobile 2023,fair,3,50
-2023-04-21,Milano,Salone del Mobile 2023,fair,3,50
-2023-04-22,Milano,Salone del Mobile 2023,fair,3,50
-2023-04-23,Milano,Salone del Mobile 2023,fair,3,50
-2023-05-19,Cernobbio,Concorso d'Eleganza Villa d'Este,festival,3,7
-2023-05-20,Cernobbio,Concorso d'Eleganza Villa d'Este,festival,3,7
-2023-05-21,Cernobbio,Concorso d'Eleganza Villa d'Este,festival,3,7
-2023-08-10,Como,Ferragosto — Tourism Peak,tourism_peak,3,0
-2023-08-11,Como,Ferragosto — Tourism Peak,tourism_peak,3,0
-2023-08-12,Como,Ferragosto — Tourism Peak,tourism_peak,3,0
-2023-08-13,Como,Ferragosto — Tourism Peak,tourism_peak,3,0
-2023-08-14,Como,Ferragosto — Tourism Peak,tourism_peak,3,0
-2023-08-15,Como,Ferragosto — Tourism Peak,tourism_peak,3,0
-2023-08-16,Como,Ferragosto — Tourism Peak,tourism_peak,3,0
-2023-08-17,Como,Ferragosto — Tourism Peak,tourism_peak,3,0
-2023-08-18,Como,Ferragosto — Tourism Peak,tourism_peak,3,0
-2023-08-26,Como,Como 1907 vs Reggiana (Serie B),sports,1,2
-2023-08-31,Como,Fiera di Sant'Abbondio,festival,2,3
-2023-09-01,Monza,GP Italia F1,sports,3,45
-2023-09-02,Monza,GP Italia F1,sports,3,45
-2023-09-03,Monza,GP Italia F1,sports,3,45
-2023-09-17,Como,Como 1907 vs Ternana (Serie B),sports,1,2
-2023-09-19,Milano,Milano Fashion Week Sep 2023,fair,3,50
-2023-09-20,Milano,Milano Fashion Week Sep 2023,fair,3,50
-2023-09-21,Milano,Milano Fashion Week Sep 2023,fair,3,50
-2023-09-22,Milano,Milano Fashion Week Sep 2023,fair,3,50
-2023-09-23,Como,Palio del Baradello,festival,2,3
-2023-09-23,Milano,Milano Fashion Week Sep 2023,fair,3,50
-2023-09-24,Milano,Milano Fashion Week Sep 2023,fair,3,50
-2023-09-24,Como,Palio del Baradello,festival,2,3
-2023-09-25,Milano,Milano Fashion Week Sep 2023,fair,3,50
-2023-09-27,Como,Como 1907 vs Sampdoria (Serie B),sports,1,2
-2023-09-28,Como,Die Zauberflöte (Mozart) — Teatro Sociale,concert,1,2
-2023-09-29,Como,Die Zauberflöte (Mozart) — Teatro Sociale,concert,1,2
-2023-09-30,Como,Die Zauberflöte (Mozart) — Teatro Sociale,concert,1,2
-2023-10-03,Como,Carmina Burana — Teatro Sociale,concert,1,2
-2023-10-05,Cernobbio,Orticolario 2023,fair,2,7
-2023-10-06,Cernobbio,Orticolario 2023,fair,2,7
-2023-10-07,Cernobbio,Orticolario 2023,fair,2,7
-2023-10-08,Cernobbio,Orticolario 2023,fair,2,7
-2023-10-14,Cernobbio,Proposte 2023,fair,2,7
-2023-10-15,Cernobbio,Proposte 2023,fair,2,7
-2023-10-16,Cernobbio,Proposte 2023,fair,2,7
-2023-10-17,Cernobbio,Proposte 2023,fair,2,7
-2023-10-28,Como,Como 1907 vs Catanzaro (Serie B),sports,1,2
-2023-11-07,Milano,EICMA 2023,fair,3,50
-2023-11-08,Milano,EICMA 2023,fair,3,50
-2023-11-08,Como,La vita davanti a sé — Teatro Sociale,concert,1,2
-2023-11-09,Como,La vita davanti a sé — Teatro Sociale,concert,1,2
-2023-11-09,Milano,EICMA 2023,fair,3,50
-2023-11-10,Milano,EICMA 2023,fair,3,50
-2023-11-11,Milano,EICMA 2023,fair,3,50
-2023-11-12,Milano,EICMA 2023,fair,3,50
-2023-11-25,Como,Como 1907 vs Feralpisalò (Serie B),sports,1,2
-2023-11-28,Como,Como 1907 vs Lecco (Serie B),sports,1,2
-2023-12-01,Como,Mercatini di Natale Como,market,2,3
-2023-12-02,Como,Mercatini di Natale Como,market,2,3
-2023-12-03,Como,Mercatini di Natale Como,market,2,3
-2023-12-04,Como,Mercatini di Natale Como,market,2,3
-2023-12-05,Como,Mercatini di Natale Como,market,2,3
-2023-12-06,Como,Mercatini di Natale Como,market,2,3
-2023-12-07,Como,Mercatini di Natale Como,market,2,3
-2023-12-08,Como,Mercatini di Natale Como,market,2,3
-2023-12-08,Como,Don Carlo (Verdi) — Teatro Sociale,concert,1,2
-2023-12-09,Como,Don Carlo (Verdi) — Teatro Sociale,concert,1,2
-2023-12-09,Como,Mercatini di Natale Como,market,2,3
-2023-12-10,Como,Mercatini di Natale Como,market,2,3
-2023-12-10,Como,Como 1907 vs Modena (Serie B),sports,1,2
-2023-12-10,Como,Don Carlo (Verdi) — Teatro Sociale,concert,1,2
-2023-12-11,Como,Mercatini di Natale Como,market,2,3
-2023-12-12,Como,Mercatini di Natale Como,market,2,3
-2023-12-13,Como,Mercatini di Natale Como,market,2,3
-2023-12-14,Como,Mercatini di Natale Como,market,2,3
-2023-12-15,Como,Mercatini di Natale Como,market,2,3
-2023-12-16,Como,Mercatini di Natale Como,market,2,3
-2023-12-17,Como,Mercatini di Natale Como,market,2,3
-2023-12-18,Como,Mercatini di Natale Como,market,2,3
-2023-12-19,Como,Mercatini di Natale Como,market,2,3
-2023-12-20,Como,Mercatini di Natale Como,market,2,3
-2023-12-21,Como,Mercatini di Natale Como,market,2,3
-2023-12-22,Como,Mercatini di Natale Como,market,2,3
-2023-12-23,Como,Mercatini di Natale Como,market,2,3
-2023-12-23,Como,Como 1907 vs Palermo (Serie B),sports,1,2
-2023-12-24,Como,Mercatini di Natale Como,market,2,3
-2023-12-25,Como,Mercatini di Natale Como,market,2,3
-2023-12-26,Como,Mercatini di Natale Como,market,2,3
-2023-12-30,Como,Ponte Capodanno,tourism_peak,2,0
-2023-12-31,Como,Ponte Capodanno,tourism_peak,2,0
-2024-01-01,Como,Ponte Capodanno,tourism_peak,2,0
-2024-01-02,Como,Ponte Capodanno,tourism_peak,2,0
-2024-01-13,Como,Como 1907 vs Spezia (Serie B),sports,1,2
-2024-01-27,Como,Como 1907 vs Ascoli (Serie B),sports,1,2
-2024-02-09,Como,Como 1907 vs Brescia (Serie B),sports,1,2
-2024-02-20,Milano,Milano Fashion Week Feb 2024,fair,3,50
-2024-02-21,Milano,Milano Fashion Week Feb 2024,fair,3,50
-2024-02-22,Milano,Milano Fashion Week Feb 2024,fair,3,50
-2024-02-23,Milano,Milano Fashion Week Feb 2024,fair,3,50
-2024-02-24,Como,Como 1907 vs Parma (Serie B),sports,1,2
-2024-02-24,Milano,Milano Fashion Week Feb 2024,fair,3,50
-2024-02-25,Milano,Milano Fashion Week Feb 2024,fair,3,50
-2024-02-26,Milano,Milano Fashion Week Feb 2024,fair,3,50
-2024-03-03,Como,Como 1907 vs Venezia (Serie B),sports,1,2
-2024-03-16,Como,Como 1907 vs Pisa (Serie B),sports,1,2
-2024-03-24,Como,Sister Act (musical) — Teatro Sociale,concert,1,2
-2024-03-30,Como,Pasqua e Pasquetta,tourism_peak,2,0
-2024-03-31,Como,Pasqua e Pasquetta,tourism_peak,2,0
-2024-04-01,Como,Como 1907 vs Südtirol (Serie B),sports,1,2
-2024-04-01,Como,Pasqua e Pasquetta,tourism_peak,2,0
-2024-04-10,Como,Grease (musical) — Teatro Sociale,concert,1,2
-2024-04-11,Como,Grease (musical) — Teatro Sociale,concert,1,2
-2024-04-13,Como,Como 1907 vs Bari (Serie B),sports,1,2
-2024-04-16,Milano,Salone del Mobile 2024,fair,3,50
-2024-04-17,Milano,Salone del Mobile 2024,fair,3,50
-2024-04-18,Milano,Salone del Mobile 2024,fair,3,50
-2024-04-19,Milano,Salone del Mobile 2024,fair,3,50
-2024-04-20,Milano,Salone del Mobile 2024,fair,3,50
-2024-04-21,Milano,Salone del Mobile 2024,fair,3,50
-2024-05-01,Como,Como 1907 vs Cittadella (Serie B),sports,1,2
-2024-05-10,Como,Como 1907 vs Cosenza (Serie B),sports,1,2
-2024-05-24,Cernobbio,Concorso d'Eleganza Villa d'Este,festival,3,7
-2024-05-25,Cernobbio,Concorso d'Eleganza Villa d'Este,festival,3,7
-2024-05-26,Cernobbio,Concorso d'Eleganza Villa d'Este,festival,3,7
-2024-08-10,Como,Ferragosto — Tourism Peak,tourism_peak,3,0
-2024-08-11,Como,Ferragosto — Tourism Peak,tourism_peak,3,0
-2024-08-12,Como,Ferragosto — Tourism Peak,tourism_peak,3,0
-2024-08-13,Como,Ferragosto — Tourism Peak,tourism_peak,3,0
-2024-08-14,Como,Ferragosto — Tourism Peak,tourism_peak,3,0
-2024-08-15,Como,Ferragosto — Tourism Peak,tourism_peak,3,0
-2024-08-16,Como,Ferragosto — Tourism Peak,tourism_peak,3,0
-2024-08-17,Como,Ferragosto — Tourism Peak,tourism_peak,3,0
-2024-08-18,Como,Ferragosto — Tourism Peak,tourism_peak,3,0
-2024-08-30,Monza,GP Italia F1,sports,3,45
-2024-08-31,Como,Fiera di Sant'Abbondio,festival,2,3
-2024-08-31,Monza,GP Italia F1,sports,3,45
-2024-09-01,Monza,GP Italia F1,sports,3,45
-2024-09-14,Como,Como 1907 vs Bologna (Serie A),sports,2,2
-2024-09-17,Milano,Milano Fashion Week Sep 2024,fair,3,50
-2024-09-18,Milano,Milano Fashion Week Sep 2024,fair,3,50
-2024-09-19,Milano,Milano Fashion Week Sep 2024,fair,3,50
-2024-09-20,Milano,Milano Fashion Week Sep 2024,fair,3,50
-2024-09-21,Milano,Milano Fashion Week Sep 2024,fair,3,50
-2024-09-21,Como,Palio del Baradello,festival,2,3
-2024-09-22,Como,Palio del Baradello,festival,2,3
-2024-09-22,Milano,Milano Fashion Week Sep 2024,fair,3,50
-2024-09-23,Milano,Milano Fashion Week Sep 2024,fair,3,50
-2024-09-29,Como,Como 1907 vs Hellas Verona (Serie A),sports,2,2
-2024-10-03,Cernobbio,Orticolario 2024,fair,2,7
-2024-10-04,Cernobbio,Orticolario 2024,fair,2,7
-2024-10-05,Cernobbio,Orticolario 2024,fair,2,7
-2024-10-06,Cernobbio,Orticolario 2024,fair,2,7
-2024-10-12,Cernobbio,Proposte 2024,fair,2,7
-2024-10-13,Cernobbio,Proposte 2024,fair,2,7
-2024-10-14,Cernobbio,Proposte 2024,fair,2,7
-2024-10-15,Cernobbio,Proposte 2024,fair,2,7
-2024-10-19,Como,Como 1907 vs Parma (Serie A),sports,2,2
-2024-10-31,Como,Como 1907 vs Lazio (Serie A),sports,2,2
-2024-11-05,Milano,EICMA 2024,fair,3,50
-2024-11-06,Milano,EICMA 2024,fair,3,50
-2024-11-07,Milano,EICMA 2024,fair,3,50
-2024-11-08,Milano,EICMA 2024,fair,3,50
-2024-11-09,Milano,EICMA 2024,fair,3,50
-2024-11-10,Milano,EICMA 2024,fair,3,50
-2024-11-24,Como,Como 1907 vs Fiorentina (Serie A),sports,2,2
-2024-11-30,Como,Como 1907 vs Monza (Serie A),sports,2,2
-2024-12-01,Como,Mercatini di Natale Como,market,2,3
-2024-12-02,Como,Mercatini di Natale Como,market,2,3
-2024-12-03,Como,Mercatini di Natale Como,market,2,3
-2024-12-04,Como,Mercatini di Natale Como,market,2,3
-2024-12-05,Como,Mercatini di Natale Como,market,2,3
-2024-12-06,Como,Mercatini di Natale Como,market,2,3
-2024-12-07,Como,Mercatini di Natale Como,market,2,3
-2024-12-08,Como,Mercatini di Natale Como,market,2,3
-2024-12-09,Como,Mercatini di Natale Como,market,2,3
-2024-12-10,Como,Mercatini di Natale Como,market,2,3
-2024-12-11,Como,Mercatini di Natale Como,market,2,3
-2024-12-12,Como,Mercatini di Natale Como,market,2,3
-2024-12-13,Como,Mercatini di Natale Como,market,2,3
-2024-12-14,Como,Mercatini di Natale Como,market,2,3
-2024-12-15,Como,Mercatini di Natale Como,market,2,3
-2024-12-16,Como,Mercatini di Natale Como,market,2,3
-2024-12-17,Como,Mercatini di Natale Como,market,2,3
-2024-12-18,Como,Mercatini di Natale Como,market,2,3
-2024-12-19,Como,Mercatini di Natale Como,market,2,3
-2024-12-20,Como,Mercatini di Natale Como,market,2,3
-2024-12-21,Como,Mercatini di Natale Como,market,2,3
-2024-12-22,Como,Mercatini di Natale Como,market,2,3
-2024-12-23,Como,Mercatini di Natale Como,market,2,3
-2024-12-24,Como,Mercatini di Natale Como,market,2,3
-2024-12-25,Como,Mercatini di Natale Como,market,2,3
-2024-12-26,Como,Mercatini di Natale Como,market,2,3
+event_id,date,city,event_name,event_type,magnitude,radius_km
+1,2023-01-01,Como,Ponte Capodanno,tourism_peak,2,0
+1,2023-01-02,Como,Ponte Capodanno,tourism_peak,2,0
+2,2023-02-21,Milano,Milano Fashion Week Feb 2023,fair,3,50
+2,2023-02-22,Milano,Milano Fashion Week Feb 2023,fair,3,50
+2,2023-02-23,Milano,Milano Fashion Week Feb 2023,fair,3,50
+2,2023-02-24,Milano,Milano Fashion Week Feb 2023,fair,3,50
+2,2023-02-25,Milano,Milano Fashion Week Feb 2023,fair,3,50
+2,2023-02-26,Milano,Milano Fashion Week Feb 2023,fair,3,50
+2,2023-02-27,Milano,Milano Fashion Week Feb 2023,fair,3,50
+3,2023-04-08,Como,Pasqua e Pasquetta,tourism_peak,2,0
+3,2023-04-09,Como,Pasqua e Pasquetta,tourism_peak,2,0
+3,2023-04-10,Como,Pasqua e Pasquetta,tourism_peak,2,0
+4,2023-04-18,Milano,Salone del Mobile 2023,fair,3,50
+4,2023-04-19,Milano,Salone del Mobile 2023,fair,3,50
+4,2023-04-20,Milano,Salone del Mobile 2023,fair,3,50
+4,2023-04-21,Milano,Salone del Mobile 2023,fair,3,50
+4,2023-04-22,Milano,Salone del Mobile 2023,fair,3,50
+4,2023-04-23,Milano,Salone del Mobile 2023,fair,3,50
+5,2023-05-19,Cernobbio,Concorso d'Eleganza Villa d'Este,festival,3,7
+5,2023-05-20,Cernobbio,Concorso d'Eleganza Villa d'Este,festival,3,7
+5,2023-05-21,Cernobbio,Concorso d'Eleganza Villa d'Este,festival,3,7
+6,2023-08-10,Como,Ferragosto — Tourism Peak,tourism_peak,3,0
+6,2023-08-11,Como,Ferragosto — Tourism Peak,tourism_peak,3,0
+6,2023-08-12,Como,Ferragosto — Tourism Peak,tourism_peak,3,0
+6,2023-08-13,Como,Ferragosto — Tourism Peak,tourism_peak,3,0
+6,2023-08-14,Como,Ferragosto — Tourism Peak,tourism_peak,3,0
+6,2023-08-15,Como,Ferragosto — Tourism Peak,tourism_peak,3,0
+6,2023-08-16,Como,Ferragosto — Tourism Peak,tourism_peak,3,0
+6,2023-08-17,Como,Ferragosto — Tourism Peak,tourism_peak,3,0
+6,2023-08-18,Como,Ferragosto — Tourism Peak,tourism_peak,3,0
+7,2023-08-26,Como,Como 1907 vs Reggiana (Serie B),sports,1,2
+8,2023-08-31,Como,Fiera di Sant'Abbondio,festival,2,3
+9,2023-09-01,Monza,GP Italia F1,sports,3,45
+9,2023-09-02,Monza,GP Italia F1,sports,3,45
+9,2023-09-03,Monza,GP Italia F1,sports,3,45
+10,2023-09-17,Como,Como 1907 vs Ternana (Serie B),sports,1,2
+11,2023-09-19,Milano,Milano Fashion Week Sep 2023,fair,3,50
+11,2023-09-20,Milano,Milano Fashion Week Sep 2023,fair,3,50
+11,2023-09-21,Milano,Milano Fashion Week Sep 2023,fair,3,50
+11,2023-09-22,Milano,Milano Fashion Week Sep 2023,fair,3,50
+12,2023-09-23,Como,Palio del Baradello,festival,2,3
+11,2023-09-23,Milano,Milano Fashion Week Sep 2023,fair,3,50
+11,2023-09-24,Milano,Milano Fashion Week Sep 2023,fair,3,50
+12,2023-09-24,Como,Palio del Baradello,festival,2,3
+11,2023-09-25,Milano,Milano Fashion Week Sep 2023,fair,3,50
+13,2023-09-27,Como,Como 1907 vs Sampdoria (Serie B),sports,1,2
+14,2023-09-28,Como,Die Zauberflöte (Mozart) — Teatro Sociale,concert,1,2
+14,2023-09-29,Como,Die Zauberflöte (Mozart) — Teatro Sociale,concert,1,2
+14,2023-09-30,Como,Die Zauberflöte (Mozart) — Teatro Sociale,concert,1,2
+15,2023-10-03,Como,Carmina Burana — Teatro Sociale,concert,1,2
+16,2023-10-05,Cernobbio,Orticolario 2023,fair,2,7
+16,2023-10-06,Cernobbio,Orticolario 2023,fair,2,7
+16,2023-10-07,Cernobbio,Orticolario 2023,fair,2,7
+16,2023-10-08,Cernobbio,Orticolario 2023,fair,2,7
+17,2023-10-14,Cernobbio,Proposte 2023,fair,2,7
+17,2023-10-15,Cernobbio,Proposte 2023,fair,2,7
+17,2023-10-16,Cernobbio,Proposte 2023,fair,2,7
+17,2023-10-17,Cernobbio,Proposte 2023,fair,2,7
+18,2023-10-28,Como,Como 1907 vs Catanzaro (Serie B),sports,1,2
+19,2023-11-07,Milano,EICMA 2023,fair,3,50
+19,2023-11-08,Milano,EICMA 2023,fair,3,50
+20,2023-11-08,Como,La vita davanti a sé — Teatro Sociale,concert,1,2
+20,2023-11-09,Como,La vita davanti a sé — Teatro Sociale,concert,1,2
+19,2023-11-09,Milano,EICMA 2023,fair,3,50
+19,2023-11-10,Milano,EICMA 2023,fair,3,50
+19,2023-11-11,Milano,EICMA 2023,fair,3,50
+19,2023-11-12,Milano,EICMA 2023,fair,3,50
+21,2023-11-25,Como,Como 1907 vs Feralpisalò (Serie B),sports,1,2
+22,2023-11-28,Como,Como 1907 vs Lecco (Serie B),sports,1,2
+23,2023-12-01,Como,Mercatini di Natale Como,market,2,3
+23,2023-12-02,Como,Mercatini di Natale Como,market,2,3
+23,2023-12-03,Como,Mercatini di Natale Como,market,2,3
+23,2023-12-04,Como,Mercatini di Natale Como,market,2,3
+23,2023-12-05,Como,Mercatini di Natale Como,market,2,3
+23,2023-12-06,Como,Mercatini di Natale Como,market,2,3
+23,2023-12-07,Como,Mercatini di Natale Como,market,2,3
+23,2023-12-08,Como,Mercatini di Natale Como,market,2,3
+24,2023-12-08,Como,Don Carlo (Verdi) — Teatro Sociale,concert,1,2
+24,2023-12-09,Como,Don Carlo (Verdi) — Teatro Sociale,concert,1,2
+23,2023-12-09,Como,Mercatini di Natale Como,market,2,3
+23,2023-12-10,Como,Mercatini di Natale Como,market,2,3
+25,2023-12-10,Como,Como 1907 vs Modena (Serie B),sports,1,2
+24,2023-12-10,Como,Don Carlo (Verdi) — Teatro Sociale,concert,1,2
+23,2023-12-11,Como,Mercatini di Natale Como,market,2,3
+23,2023-12-12,Como,Mercatini di Natale Como,market,2,3
+23,2023-12-13,Como,Mercatini di Natale Como,market,2,3
+23,2023-12-14,Como,Mercatini di Natale Como,market,2,3
+23,2023-12-15,Como,Mercatini di Natale Como,market,2,3
+23,2023-12-16,Como,Mercatini di Natale Como,market,2,3
+23,2023-12-17,Como,Mercatini di Natale Como,market,2,3
+23,2023-12-18,Como,Mercatini di Natale Como,market,2,3
+23,2023-12-19,Como,Mercatini di Natale Como,market,2,3
+23,2023-12-20,Como,Mercatini di Natale Como,market,2,3
+23,2023-12-21,Como,Mercatini di Natale Como,market,2,3
+23,2023-12-22,Como,Mercatini di Natale Como,market,2,3
+23,2023-12-23,Como,Mercatini di Natale Como,market,2,3
+26,2023-12-23,Como,Como 1907 vs Palermo (Serie B),sports,1,2
+23,2023-12-24,Como,Mercatini di Natale Como,market,2,3
+23,2023-12-25,Como,Mercatini di Natale Como,market,2,3
+23,2023-12-26,Como,Mercatini di Natale Como,market,2,3
+1,2023-12-30,Como,Ponte Capodanno,tourism_peak,2,0
+1,2023-12-31,Como,Ponte Capodanno,tourism_peak,2,0
+27,2024-01-01,Como,Ponte Capodanno,tourism_peak,2,0
+27,2024-01-02,Como,Ponte Capodanno,tourism_peak,2,0
+28,2024-01-13,Como,Como 1907 vs Spezia (Serie B),sports,1,2
+29,2024-01-27,Como,Como 1907 vs Ascoli (Serie B),sports,1,2
+30,2024-02-09,Como,Como 1907 vs Brescia (Serie B),sports,1,2
+31,2024-02-20,Milano,Milano Fashion Week Feb 2024,fair,3,50
+31,2024-02-21,Milano,Milano Fashion Week Feb 2024,fair,3,50
+31,2024-02-22,Milano,Milano Fashion Week Feb 2024,fair,3,50
+31,2024-02-23,Milano,Milano Fashion Week Feb 2024,fair,3,50
+32,2024-02-24,Como,Como 1907 vs Parma (Serie B),sports,1,2
+31,2024-02-24,Milano,Milano Fashion Week Feb 2024,fair,3,50
+31,2024-02-25,Milano,Milano Fashion Week Feb 2024,fair,3,50
+31,2024-02-26,Milano,Milano Fashion Week Feb 2024,fair,3,50
+33,2024-03-03,Como,Como 1907 vs Venezia (Serie B),sports,1,2
+34,2024-03-16,Como,Como 1907 vs Pisa (Serie B),sports,1,2
+35,2024-03-24,Como,Sister Act (musical) — Teatro Sociale,concert,1,2
+36,2024-03-30,Como,Pasqua e Pasquetta,tourism_peak,2,0
+36,2024-03-31,Como,Pasqua e Pasquetta,tourism_peak,2,0
+37,2024-04-01,Como,Como 1907 vs Südtirol (Serie B),sports,1,2
+36,2024-04-01,Como,Pasqua e Pasquetta,tourism_peak,2,0
+38,2024-04-10,Como,Grease (musical) — Teatro Sociale,concert,1,2
+38,2024-04-11,Como,Grease (musical) — Teatro Sociale,concert,1,2
+39,2024-04-13,Como,Como 1907 vs Bari (Serie B),sports,1,2
+40,2024-04-16,Milano,Salone del Mobile 2024,fair,3,50
+40,2024-04-17,Milano,Salone del Mobile 2024,fair,3,50
+40,2024-04-18,Milano,Salone del Mobile 2024,fair,3,50
+40,2024-04-19,Milano,Salone del Mobile 2024,fair,3,50
+40,2024-04-20,Milano,Salone del Mobile 2024,fair,3,50
+40,2024-04-21,Milano,Salone del Mobile 2024,fair,3,50
+41,2024-05-01,Como,Como 1907 vs Cittadella (Serie B),sports,1,2
+42,2024-05-10,Como,Como 1907 vs Cosenza (Serie B),sports,1,2
+43,2024-05-24,Cernobbio,Concorso d'Eleganza Villa d'Este,festival,3,7
+43,2024-05-25,Cernobbio,Concorso d'Eleganza Villa d'Este,festival,3,7
+43,2024-05-26,Cernobbio,Concorso d'Eleganza Villa d'Este,festival,3,7
+44,2024-08-10,Como,Ferragosto — Tourism Peak,tourism_peak,3,0
+44,2024-08-11,Como,Ferragosto — Tourism Peak,tourism_peak,3,0
+44,2024-08-12,Como,Ferragosto — Tourism Peak,tourism_peak,3,0
+44,2024-08-13,Como,Ferragosto — Tourism Peak,tourism_peak,3,0
+44,2024-08-14,Como,Ferragosto — Tourism Peak,tourism_peak,3,0
+44,2024-08-15,Como,Ferragosto — Tourism Peak,tourism_peak,3,0
+44,2024-08-16,Como,Ferragosto — Tourism Peak,tourism_peak,3,0
+44,2024-08-17,Como,Ferragosto — Tourism Peak,tourism_peak,3,0
+44,2024-08-18,Como,Ferragosto — Tourism Peak,tourism_peak,3,0
+45,2024-08-30,Monza,GP Italia F1,sports,3,45
+46,2024-08-31,Como,Fiera di Sant'Abbondio,festival,2,3
+45,2024-08-31,Monza,GP Italia F1,sports,3,45
+45,2024-09-01,Monza,GP Italia F1,sports,3,45
+47,2024-09-14,Como,Como 1907 vs Bologna (Serie A),sports,2,2
+48,2024-09-17,Milano,Milano Fashion Week Sep 2024,fair,3,50
+48,2024-09-18,Milano,Milano Fashion Week Sep 2024,fair,3,50
+48,2024-09-19,Milano,Milano Fashion Week Sep 2024,fair,3,50
+48,2024-09-20,Milano,Milano Fashion Week Sep 2024,fair,3,50
+48,2024-09-21,Milano,Milano Fashion Week Sep 2024,fair,3,50
+49,2024-09-21,Como,Palio del Baradello,festival,2,3
+49,2024-09-22,Como,Palio del Baradello,festival,2,3
+48,2024-09-22,Milano,Milano Fashion Week Sep 2024,fair,3,50
+48,2024-09-23,Milano,Milano Fashion Week Sep 2024,fair,3,50
+50,2024-09-29,Como,Como 1907 vs Hellas Verona (Serie A),sports,2,2
+51,2024-10-03,Cernobbio,Orticolario 2024,fair,2,7
+51,2024-10-04,Cernobbio,Orticolario 2024,fair,2,7
+51,2024-10-05,Cernobbio,Orticolario 2024,fair,2,7
+51,2024-10-06,Cernobbio,Orticolario 2024,fair,2,7
+52,2024-10-12,Cernobbio,Proposte 2024,fair,2,7
+52,2024-10-13,Cernobbio,Proposte 2024,fair,2,7
+52,2024-10-14,Cernobbio,Proposte 2024,fair,2,7
+52,2024-10-15,Cernobbio,Proposte 2024,fair,2,7
+53,2024-10-19,Como,Como 1907 vs Parma (Serie A),sports,2,2
+54,2024-10-31,Como,Como 1907 vs Lazio (Serie A),sports,2,2
+55,2024-11-05,Milano,EICMA 2024,fair,3,50
+55,2024-11-06,Milano,EICMA 2024,fair,3,50
+55,2024-11-07,Milano,EICMA 2024,fair,3,50
+55,2024-11-08,Milano,EICMA 2024,fair,3,50
+55,2024-11-09,Milano,EICMA 2024,fair,3,50
+55,2024-11-10,Milano,EICMA 2024,fair,3,50
+56,2024-11-24,Como,Como 1907 vs Fiorentina (Serie A),sports,2,2
+57,2024-11-30,Como,Como 1907 vs Monza (Serie A),sports,2,2
+58,2024-12-01,Como,Mercatini di Natale Como,market,2,3
+58,2024-12-02,Como,Mercatini di Natale Como,market,2,3
+58,2024-12-03,Como,Mercatini di Natale Como,market,2,3
+58,2024-12-04,Como,Mercatini di Natale Como,market,2,3
+58,2024-12-05,Como,Mercatini di Natale Como,market,2,3
+58,2024-12-06,Como,Mercatini di Natale Como,market,2,3
+58,2024-12-07,Como,Mercatini di Natale Como,market,2,3
+58,2024-12-08,Como,Mercatini di Natale Como,market,2,3
+58,2024-12-09,Como,Mercatini di Natale Como,market,2,3
+58,2024-12-10,Como,Mercatini di Natale Como,market,2,3
+58,2024-12-11,Como,Mercatini di Natale Como,market,2,3
+58,2024-12-12,Como,Mercatini di Natale Como,market,2,3
+58,2024-12-13,Como,Mercatini di Natale Como,market,2,3
+58,2024-12-14,Como,Mercatini di Natale Como,market,2,3
+58,2024-12-15,Como,Mercatini di Natale Como,market,2,3
+58,2024-12-16,Como,Mercatini di Natale Como,market,2,3
+58,2024-12-17,Como,Mercatini di Natale Como,market,2,3
+58,2024-12-18,Como,Mercatini di Natale Como,market,2,3
+58,2024-12-19,Como,Mercatini di Natale Como,market,2,3
+58,2024-12-20,Como,Mercatini di Natale Como,market,2,3
+58,2024-12-21,Como,Mercatini di Natale Como,market,2,3
+58,2024-12-22,Como,Mercatini di Natale Como,market,2,3
+58,2024-12-23,Como,Mercatini di Natale Como,market,2,3
+58,2024-12-24,Como,Mercatini di Natale Como,market,2,3
+58,2024-12-25,Como,Mercatini di Natale Como,market,2,3
+58,2024-12-26,Como,Mercatini di Natale Como,market,2,3
