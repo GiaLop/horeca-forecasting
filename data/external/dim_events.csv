@@ -203,3 +203,25 @@ event_id,date,city,event_name,event_type,magnitude,radius_km
 58,2024-12-24,Como,Mercatini di Natale Como,market,2,3
 58,2024-12-25,Como,Mercatini di Natale Como,market,2,3
 58,2024-12-26,Como,Mercatini di Natale Como,market,2,3
+59,2026-04-21,Milano,Salone del Mobile 2026,fair,3,50
+59,2026-04-22,Milano,Salone del Mobile 2026,fair,3,50
+59,2026-04-23,Milano,Salone del Mobile 2026,fair,3,50
+59,2026-04-24,Milano,Salone del Mobile 2026,fair,3,50
+59,2026-04-25,Milano,Salone del Mobile 2026,fair,3,50
+59,2026-04-26,Milano,Salone del Mobile 2026,fair,3,50
+60,2026-04-20,Milano,Milano Design Week 2026,fair,3,50
+60,2026-04-21,Milano,Milano Design Week 2026,fair,3,50
+60,2026-04-22,Milano,Milano Design Week 2026,fair,3,50
+60,2026-04-23,Milano,Milano Design Week 2026,fair,3,50
+60,2026-04-24,Milano,Milano Design Week 2026,fair,3,50
+60,2026-04-25,Milano,Milano Design Week 2026,fair,3,50
+60,2026-04-26,Milano,Milano Design Week 2026,fair,3,50
+61,2026-04-26,Milano,Elisa concerto 2026,concert,3,50
+61,2026-04-27,Milano,Elisa concerto 2026,concert,3,50
+62,2026-04-30,Milano,Mace concerto 2026,concert,3,50
+63,2026-04-23,Como,Teatro Sociale 2026,concert,1,2
+63,2026-04-24,Como,Teatro Sociale 2026,concert,1,2
+63,2026-04-25,Como,Teatro Sociale 2026,concert,1,2
+63,2026-04-26,Como,Teatro Sociale 2026,concert,1,2
+64,2026-05-02,Como,Conservatorio 2026,concert,1,2
+64,2026-05-03,Como,Conservatorio 2026,concert,1,2
