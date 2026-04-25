@@ -19,7 +19,7 @@ horeca-forecasting/
 │   ├── raw/               ← source files (do not reload after Notebook 01)
 │   ├── external/          ← dim_calendar, dim_weather, dim_events, dim_energy
 │   └── processed/
-│       └── daily_timeseries.csv   (731 days × 18 cols — main model input)
+│       └── daily_timeseries.csv   (731 days × 19 cols — main model input)
 ├── notebook/
 │   ├── 01_data_profiling_cleaning.ipynb   ✓ COMPLETE
 │   ├── 02_dimension_tables.ipynb          ✓ COMPLETE
@@ -76,22 +76,26 @@ All 5 raw tables profiled and cleaned. Recipe augmented to 16 dishes with 125-in
 |-------|-------|-------|
 | `dim_calendar` | 731×7 | Italian + Swiss holidays, custom ponte logic, meteorological seasons |
 | `dim_weather` | 731×4 | Open-Meteo API, Como (45.81°N 9.09°E), `is_bad_weather = rain_mm>10 OR temp<5` |
-| `dim_events` | 226×7 | 2023-2024 real events + 6 events 2026 appended (ids 59–64); `event_id` = event_name + year key |
+| `dim_events` | 226×8 | 2023-2024 real events + 6 events 2026 (ids 59–64); `event_pull` {−1,0,+1} added |
 | `dim_energy` | 731×3 | Real GME PUN 2023-2024, base 100 = 2019 mean (52.33 €/MWh) |
 
 ### ✓ Notebook 03 — ETL & SQL (DuckDB)
-`daily_timeseries.csv` — 731 days × 18 cols. Covers deduped by (date, tavolo); revenue food-only
+`daily_timeseries.csv` — 731 days × 19 cols. Covers deduped by (date, tavolo); revenue food-only
 (24.8% bevande excluded); 419 out-of-range POS rows removed. All dim tables LEFT JOINed on date.
 NaN only on `event_name` / `event_type` for days without events (by design).
+Columns added post-ETL: `event_pull` {−1,0,+1}, `is_swiss_holiday`; `event_radius_km` removed.
 
 ### ✓ Notebook 04 — Forecasting Model (PoC)
-- **Phase A**: MA7 + MA30 rolling averages — demand is structurally flat (monthly range: 50–56 covers)
-- **Phase B**: Prophet — `changepoint_prior_scale=0.1`, `seasonality_mode=additive`, `holidays_prior_scale=10`;
-  8 external regressors; train 641 days / test 90 days (Q4 2024); **RMSE 10.06 — MAPE 14.57%**
-- **Phase C**: Peak analysis vs MA7 — EICMA drains Como (−29.9), GP Monza fills it (+25.6);
-  event sign depends on event type, not distance
-- **Phase D**: 14-day operational forecast (2026-04-24 → 2026-05-07) with real Open-Meteo weather
-  and 2026 events. PoC only — extrapolating 16 months beyond training data.
+**Regressors (7):** `is_holiday`, `is_swiss_holiday`, `is_ponte`, `avg_temp`, `rain_mm`, `event_magnitude`, `event_pull`
+`is_bad_weather` kept in df for display only — excluded from model (redundant with avg_temp + rain_mm).
+
+- **Phase A**: MA7 + MA30 — demand structurally flat (monthly range 50–56 covers, weekday/weekend delta +3.3)
+- **Phase B**: Prophet covers — train 641d / test 90d (Q4 2024); RMSE / MAPE to confirm after re-run
+- **Phase B CV**: cross-validation `initial=365d · period=30d · horizon=90d` (~8 folds)
+- **Phase B2**: Prophet avg_check model; revenue = `yhat_covers × yhat_avg_check`
+- **Phase C**: Peak analysis vs MA7 — EICMA drains Como (−29.9), GP Monza pulls (+25.6)
+- **Phase D**: 14-day forecast (2026-04-24 → 2026-05-07), Open-Meteo API with explicit date range,
+  pull/drain event markers on plot; PoC — 16 months beyond training data
 
 ### Next Step: Notebook 05 — Energy Scenario
 Pass-through analysis: energy_price → cost_inflation → menu_price_adjustment → demand_response.
