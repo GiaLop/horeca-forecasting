@@ -80,12 +80,16 @@ All 5 raw tables profiled and cleaned. Recipe augmented to 16 dishes with 125-in
 | `dim_energy` | 731×3 | Real GME PUN 2023-2024, base 100 = 2019 mean (52.33 €/MWh) |
 
 ### ✓ Notebook 03 — ETL & SQL (DuckDB)
-`daily_timeseries.csv` — 731 days × 19 cols. Covers deduped by (date, tavolo); revenue food-only
-(24.8% bevande excluded); 419 out-of-range POS rows removed. All dim tables LEFT JOINed on date.
+`daily_timeseries.csv` — 731 days × 19 cols. Revenue food-only (24.8% bevande excluded);
+419 out-of-range POS rows removed. All dim tables LEFT JOINed on date.
 NaN only on `event_name` / `event_type` for days without events (by design).
-Columns added post-ETL: `event_pull` {−1,0,+1}, `is_swiss_holiday`; `event_radius_km` removed.
+**Covers fix (2026-04-27):** dedup changed from `(date, tavolo)` → `(date, tavolo, meal_slot)`
+where `meal_slot = pranzo (12–14h) | cena (19–22h)`. Captures lunch+dinner turnovers.
+Covers mean: 54 → 105 | range: 21–154. `avg_check` mean: 37 → 27 EUR (denominator corrected).
+`is_swiss_holiday` and `event_pull` now joined directly in DuckDB query; `event_radius_km` removed.
 
-### ✓ Notebook 04 — Forecasting Model (PoC)
+### ⚠ Notebook 04 — Forecasting Model (PoC) — NEEDS RE-RUN
+Trained on old covers (mean 54). Must re-run after NB03 fix (covers mean now 105).
 **Regressors (7):** `is_holiday`, `is_swiss_holiday`, `is_ponte`, `avg_temp`, `rain_mm`, `event_magnitude`, `event_pull`
 `is_bad_weather` kept in df for display only — excluded from model (redundant with avg_temp + rain_mm).
 
