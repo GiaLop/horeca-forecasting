@@ -79,7 +79,7 @@ All 5 raw tables profiled and cleaned. Recipe augmented to 16 dishes with 125-in
 | `dim_events` | 226×8 | 2023-2024 real events + 6 events 2026 (ids 59–64); `event_pull` {−1,0,+1} added |
 | `dim_energy` | 731×3 | Real GME PUN 2023-2024, base 100 = 2019 mean (52.33 €/MWh) |
 
-### ⚠ Notebook 03 — ETL & SQL (DuckDB) — needs re-run
+### ⚠ Notebook 03 — ETL & SQL (DuckDB)
 `daily_timeseries.csv` — 731 days × 19 cols. Revenue food-only (24.8% bevande excluded);
 419 out-of-range POS rows removed. All dim tables LEFT JOINed on date.
 NaN only on `event_name` / `event_type` for days without events (by design).
