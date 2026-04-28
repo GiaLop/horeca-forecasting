@@ -79,27 +79,34 @@ All 5 raw tables profiled and cleaned. Recipe augmented to 16 dishes with 125-in
 | `dim_events` | 226×8 | 2023-2024 real events + 6 events 2026 (ids 59–64); `event_pull` {−1,0,+1} added |
 | `dim_energy` | 731×3 | Real GME PUN 2023-2024, base 100 = 2019 mean (52.33 €/MWh) |
 
-### ✓ Notebook 03 — ETL & SQL (DuckDB)
+### ⚠ Notebook 03 — ETL & SQL (DuckDB) — needs re-run
 `daily_timeseries.csv` — 731 days × 19 cols. Revenue food-only (24.8% bevande excluded);
 419 out-of-range POS rows removed. All dim tables LEFT JOINed on date.
 NaN only on `event_name` / `event_type` for days without events (by design).
 **Covers fix (2026-04-27):** dedup changed from `(date, tavolo)` → `(date, tavolo, meal_slot)`
 where `meal_slot = pranzo (12–14h) | cena (19–22h)`. Captures lunch+dinner turnovers.
-Covers mean: 54 → 105 | range: 21–154. `avg_check` mean: 37 → 27 EUR (denominator corrected).
+**Scontrino filter (2026-04-27):** dropped 4.452 scontrini — `>1000€` (25 outlier) +
+`<20€ on normal tables` (3.969 incomplete registrations; bar/asporto <20€ kept).
+Covers mean: 54 → 86 | range: 17–146. Revenue mean: 2004 → 2731 EUR. `avg_check` mean: 37 → 31 EUR.
 `is_swiss_holiday` and `event_pull` now joined directly in DuckDB query; `event_radius_km` removed.
+**GP F1 event_pull correction (2026-04-28):** `dim_events.csv` updated — GP Italia F1 `event_pull` −1 (was +1).
+Peak analysis confirmed GP F1 drains Como (−54.4 vs MA7); re-run NB03 + NB04 to propagate correction.
 
-### ⚠ Notebook 04 — Forecasting Model (PoC) — NEEDS RE-RUN
-Trained on old covers (mean 54). Must re-run after NB03 fix (covers mean now 105).
+### ✓ Notebook 04 — Forecasting Model (PoC) — re-run 2026-04-27
+Data: covers mean 86, revenue mean 2731 EUR (post-scontrino filter).
 **Regressors (7):** `is_holiday`, `is_swiss_holiday`, `is_ponte`, `avg_temp`, `rain_mm`, `event_magnitude`, `event_pull`
 `is_bad_weather` kept in df for display only — excluded from model (redundant with avg_temp + rain_mm).
 
 - **Phase A**: MA7 + MA30 — demand structurally flat (monthly range 50–56 covers, weekday/weekend delta +3.3)
-- **Phase B**: Prophet covers — train 641d / test 90d (Q4 2024); RMSE / MAPE to confirm after re-run
-- **Phase B CV**: cross-validation `initial=365d · period=30d · horizon=90d` (~8 folds)
-- **Phase B2**: Prophet avg_check model; revenue = `yhat_covers × yhat_avg_check`
-- **Phase C**: Peak analysis vs MA7 — EICMA drains Como (−29.9), GP Monza pulls (+25.6)
-- **Phase D**: 14-day forecast (2026-04-24 → 2026-05-07), Open-Meteo API with explicit date range,
-  pull/drain event markers on plot; PoC — 16 months beyond training data
+- **Phase B**: Prophet covers — train 641d / test 90d (Q4 2024); RMSE 19.97 / MAPE 19.18%
+- **Phase B CV**: cross-validation `initial=456d · period=30d · horizon=90d` (4 folds); RMSE CV 16.70 / MAPE CV 15.44%
+- **Phase B2**: Prophet avg_check — RMSE 7.64 EUR / MAPE 21.59%; revenue estimate MAPE 30.88% — kept as technical benchmark
+- **Phase B3**: Lookup revenue (median avg_check by season × is_weekend) — MAPE 35.97%; lost vs B2.
+  Root cause: 2-year window too short for stable winter median (+8.5/+11.6 EUR mismatch on test). Revisit with ≥3 years real data.
+  Operational recommendation: use Lookup B3 in production with ≥3 years; use Prophet B2 until then.
+- **Phase C**: Peak analysis vs MA7 — EICMA drains (−56.4), GP F1 drains (−54.4); Fashion Week pulls (+48.6), Mercatini pulls (+46.0). 7–8/10 peaks unexplained by any regressor.
+- **Phase D**: 14-day forecast (2026-04-24 → 2026-05-07), Open-Meteo API, pull/drain markers on plot.
+  PoC warning explicit in printed output and plot annotation; gap ~16 months beyond training data.
 
 ### Next Step: Notebook 05 — Energy Scenario
 Pass-through analysis: energy_price → cost_inflation → menu_price_adjustment → demand_response.
