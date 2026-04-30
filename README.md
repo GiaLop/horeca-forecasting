@@ -11,7 +11,7 @@ Un sistema di analisi predittiva per la ristorazione che risponde a due domande:
 1. **Quanti coperti faremo domani?** — Pipeline A: Demand Forecasting
 2. **Quanto ci costerà uno shock energetico?** — Pipeline B: Energy Pass-Through Analysis
 
-Costruito da un data analyst con 20 anni di esperienza HoReCa. L'obiettivo è portare decisioni data-driven in un settore che ancora si affida all'istinto.
+Costruito da un data analyst con 15 anni di esperienza HoReCa. L'obiettivo è portare decisioni data-driven in un settore che ancora si affida all'istinto.
 
 ---
 
