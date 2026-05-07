@@ -122,11 +122,11 @@ Con 2 anni di dati Prophet batte il lookup. Con 3+ anni la lookup diventa più s
 
 | Evento | Delta vs MA7 | Interpretazione |
 |--------|-------------|-----------------|
-| GP Italia F1 (2023) | -47.3 (drain) | Il pubblico F1 va a Monza/Milano, Como si svuota |
-| EICMA 2023 | -46.6 (drain) | Milano attrae la clientela locale |
-| Milano Fashion Week | +42.9 (pull) | Fashion buyer usano Como come base |
-| Salone del Mobile 2024 | +45.6 (pull) | Stessa logica Fashion Week |
-| Mercatini Natale | +46 domenica / -22 giovedì | Effetto giorno sovrapposto all'evento |
+| EICMA 2023 | −56.4 (drain) | Milano attrae la clientela locale |
+| GP Italia F1 2023 | −54.4 (drain) | Il pubblico F1 va a Monza/Milano, Como si svuota |
+| Milano Fashion Week | +48.6 (pull) | Fashion buyer usano Como come base |
+| Mercatini di Natale Como | +46.0 (pull) | Evento locale, day-tripper diretti a Como |
+| Salone del Mobile / Como 1907 | +45–47 (pull) | Stessa logica Fashion Week |
 
 > **Conclusione:** il segno dell'effetto (pull vs drain) dipende dall'evento specifico, non dalla distanza. Lo stesso tipo di evento può avere effetti opposti. È il modello che impara dai dati, non una regola a priori.
 
@@ -134,17 +134,41 @@ Con 2 anni di dati Prophet batte il lookup. Con 3+ anni la lookup diventa più s
 
 ## Pipeline B — Energy Scenario (Notebook 05)
 
-*In sviluppo.*
-
 Analisi pass-through dello shock energetico 2026 (scenario Iran crisis):
 
 ```
-energy_price → cost_inflation → menu_price_adjustment → demand_response
+energy_price → Δ% energia vs baseline
+             → Δ% prezzo menu  (pass-through rate × Δ% energia)
+             → margin_compression EUR/day  (energy cost increase − quota trasferita + revenue persa)
 ```
 
-Scenari: 150 / 300 / 400 €/MWh (baseline 2026 già a ~120-160 €/MWh).
+**Calibrazione FIPE 2022:** +200% energia → +5% prezzi ristorazione → pass-through rate = 0.025.  
+Baseline PUN 2026: 117 €/MWh. Energy share su fatturato: 12%.
 
-Calibrazione su dati FIPE 2022: +200% energia → +5% prezzi ristorazione.
+**Scenari:**
+
+| Scenario | PUN | Δ% energia |
+|----------|-----|-----------|
+| A — Tensione lieve | 150 €/MWh | +28.2% |
+| B — Shock moderato | 250 €/MWh | +113.7% |
+| C — Shock severo | 300 €/MWh | +156.4% |
+
+**Demand Response — due segmenti di clientela:**
+
+| Segmento | Elasticità (ε) | PT rate | Strategia |
+|----------|---------------|---------|-----------|
+| Turistico | −0.25 | 0.050 | Trasferisci al menu — tollera aumenti |
+| Locals | −0.70 | 0.015 | Assorbi nel margine — price-sensitive |
+
+**Compressione margine totale (EUR/day · EUR/anno):**
+
+| Scenario | Turistico | Locals |
+|----------|-----------|--------|
+| A — 150 €/MWh | ~45 / ~16,400 | ~63 / ~23,000 |
+| B — 250 €/MWh | ~181 / ~66,100 | ~254 / ~92,700 |
+| C — 300 €/MWh | ~249 / ~90,900 | ~349 / ~127,400 |
+
+**Leve operative per scenario** (con timeframe e KPI): ottimizzazione turni staff · menu engineering · rinegoziazione fornitori.
 
 ---
 
@@ -162,7 +186,7 @@ Calibrazione su dati FIPE 2022: +200% energia → +5% prezzi ristorazione.
 - Dati sintetici: la struttura del pipeline è corretta, i valori assoluti non rispecchiano un ristorante reale
 - Gap temporale: modello allenato su 2023-2024, forecast al 2026 — 16 mesi di estrapolazione
 - In produzione: retrain settimanale con dati aggiornati prima di ogni uso operativo
-- `event_pull` del GP Monza assegnato come pull ma i dati mostrano drain nel 2023 — da rivalidare con dati reali
+- `event_pull` del GP Monza corretto a −1 (drain) dopo analisi peak — da rivalidare con dati POS reali
 
 ---
 
