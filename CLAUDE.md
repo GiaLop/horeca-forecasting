@@ -108,6 +108,29 @@ Data: covers mean 86, revenue mean 2731 EUR (post-scontrino filter).
 - **Phase D**: 14-day forecast (2026-04-24 → 2026-05-07), Open-Meteo API, pull/drain markers on plot.
   PoC warning explicit in printed output and plot annotation; gap ~16 months beyond training data.
 
-### Next Step: Notebook 05 — Energy Scenario
-Pass-through analysis: energy_price → cost_inflation → menu_price_adjustment → demand_response.
-Calibrated on 2022 FIPE data (+200% energy, +5% restaurant prices). 2026 scenarios: 150/300/400 €/MWh.
+### ✓ Notebook 05 — Energy Scenario (Pass-Through Analysis)
+Calibration: FIPE 2022 (+200% energy → +5% menu → pass-through rate 0.025). Baseline PUN: 117 €/MWh.
+Scenarios: A=150 / B=250 / C=300 €/MWh. Energy share of revenue: 12%.
+
+- **Phase A**: Historical calibration — pass-through rate 0.025 validated
+- **Phase B**: Scenario computation — Δ% energia, Δ% menu, margin_compression EUR/day and EUR/year
+- **Phase C**: Historical PUN chart (GME 2023-2024) + three scenario threshold lines
+- **Phase D**: Demand response — two segments (Turistico ε=−0.25 PT=0.050 / Locals ε=−0.70 PT=0.015);
+  extended chain: margin_comp_total = energy_cost_increase − quota_trasferita + revenue_loss_demand.
+  Operational levers per scenario (staff / menu engineering / supplier renegotiation) with timeframe + KPI.
+  Model limitations documented: elasticity estimates, labour cost excluded, price transition management,
+  non-linear elasticity.
+
+**Margin compression summary (EUR/day · EUR/year):**
+| Scenario | Turistico | Locals |
+|----------|-----------|--------|
+| A — 150 €/MWh | ~45 / ~16,400 | ~63 / ~23,000 |
+| B — 250 €/MWh | ~181 / ~66,100 | ~254 / ~92,700 |
+| C — 300 €/MWh | ~249 / ~90,900 | ~349 / ~127,400 |
+
+### Project Status: COMPLETE (PoC)
+All 5 notebooks delivered. Next steps if continuing with real data:
+- Re-run NB03 + NB04 after GP F1 event_pull correction (dim_events already updated)
+- Calibrate demand elasticity on real POS data (covers ~ delta_menu_pct)
+- Add labour cost to pass-through chain (NB05 Phase D v2)
+- Retrain Prophet weekly on rolling data for production forecasting
